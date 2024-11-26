@@ -61,6 +61,8 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
 						}
 					};
    `
+	    }} />
+
 				</script>
                 
                     </Head>
