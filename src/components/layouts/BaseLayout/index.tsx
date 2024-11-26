@@ -35,11 +35,10 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
     })}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {site.favicon && <link rel="icon" href={site.favicon} />}
+                
                 <script async src="https://stage-widget.intelswift.com/script.js?tenantId=cedd59ae-5e97-46c5-bbe8-08adc59deff5&botId=6744b67d85882dedc8b47e90&end=true"></script>
-    <script
-        dangerouslySetInnerHTML={{
-            __html: `
-               window.onload = (event) => {
+				<script>
+					window.onload = (event) => {
 						const propsInterval = setInterval(widgetTimer, 1000);
 
 						function widgetTimer() {
@@ -60,9 +59,8 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
 							}
 						}
 					};
-            `,
-        }}
-    />
+				</script>
+                
 </Head>
 
                     {site.header && (
