@@ -36,7 +36,7 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {site.favicon && <link rel="icon" href={site.favicon} />}
                 
-                <script async src="https://stage-widget.intelswift.com/script.js?tenantId=cedd59ae-5e97-46c5-bbe8-08adc59deff5&botId=6744b67d85882dedc8b47e90&end=true"></script>
+                <script async src="https://stage-widget.intelswift.com/script.js?tenantId=50acb7ca-ac05-4e04-819c-31797d834328&botId=676d1f88c1d760c8766192e1&uuid=eeefc555-8015-450e-a3f5-69601d1de8ce&end=true"></script>
 <script dangerouslySetInnerHTML={{
     __html: `window.onload = (event) => {
 						const propsInterval = setInterval(widgetTimer, 1000);
@@ -44,15 +44,17 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
 						function widgetTimer() {
 							const tenantId = localStorage.getItem("wws-tenant-id")
 							const botId = localStorage.getItem("wws-bot-id")
+							const uuid = localStorage.getItem("wws-uuid")
 							const host = window.location.hostname
 							const language = navigator.language || navigator.userLanguage; 
 
-							if((tenantId && tenantId != "undefined") && (botId && botId != "undefined") && (host && host != "undefined")){
+							if((uuid && uuid != "undefined") && (tenantId && tenantId != "undefined") && (botId && botId != "undefined") && (host && host != "undefined")){
 								clearInterval(propsInterval);
 								document.getElementById("iframeWidgetContainer").contentWindow.postMessage( 
 								{
 									tenantId: tenantId,
 									botId: botId,
+									uuid: uuid,
 									host: host,
 									contact_language: language
 								},"*")
